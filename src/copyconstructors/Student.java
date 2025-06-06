@@ -14,7 +14,7 @@ public class Student {
         this.age = age;
         this.batch = batch;
         this.psp= psp;
-        this.exam = exam;
+        this.exam = exam; // This is the shallow copy, it will assign the address as value to the exam obj
     }
 
     public Student(String name, int age, String batch, float psp, String subject, int marks){
@@ -22,7 +22,7 @@ public class Student {
         this.age = age;
         this.batch = batch;
         this.psp= psp;
-        this.exam = new Exam(subject, marks);
+        this.exam = new Exam(subject, marks); // This is the Deep Copy because we are creating new obj of type Exam
     }
 
     public Student(Student s){ //copy constructor for student
@@ -34,8 +34,8 @@ public class Student {
         //deep copy - simple way
 //        this.exam = new Exam(s.exam.subject, s.exam.marks);
         //deep copy - copy constructor
-        this.exam = new Exam(s.exam);
-
+        // This is a better way because we do not require to send all the attribute in function while calling.
+        this.exam = new Exam(s.exam); // This is the other way of doing deep copy i.e., by using the Copy constructor.
     }
 
     void setName(String name){

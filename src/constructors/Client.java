@@ -11,6 +11,7 @@ public class Client {
 
 
 
+
         System.out.println("DEBUG");
         s2 = s;
 
