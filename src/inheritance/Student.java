@@ -9,7 +9,11 @@ public class Student extends User{
 
     public Student(){
         //super() - behind the scenes
+//        If we are calling the super then it should be first statement in the constructor
+//        It should not be below other instructions
+//        Super is nothing but call to the parent constructor
         super("122", "Alash");
+        this.psp = 15;
         System.out.println("Student default constructor called");
     }
 
